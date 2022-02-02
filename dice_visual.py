@@ -3,8 +3,9 @@ import sys
 from die import Die
 import pygal
 
-# .
+# Запрашивает количество кубиков.
 dice = int(input('Number of dices, from 1 to 3: '))
+# Если количество кубиков >3 или <1, выполнение программы завершается.
 if dice > 3:
     print('Too many dice')
     sys.exit()
@@ -12,8 +13,9 @@ if dice > 3:
 elif dice < 1:
     print('To few dice')
     sys.exit()
-
+# Запрос на ввод количества граней кубика.
 num_sides = int(input('Number of sides of the dice: '))
+# Запрашивает количество бросков
 rolls = int(input('Number of dice rolls: '))
 
 # Создание кубика/ов.
@@ -26,6 +28,7 @@ print(results)
 # Анализ результатов.
 frequencies = []
 max_result = dice * num_sides
+# Вычисляет, сколько раз выпал каждый из возможных вариантов.
 for value in range(dice, max_result+1):
     frequency = results.count(value)  # Частота = список результатов.вернуть количество вхождений значения(1)
     frequencies.append(frequency)
